@@ -1,9 +1,30 @@
 import React from 'react'
+import { useTrailsFetch } from '../hooks/useTrailsFetch'
 
 const Trails = () => {
+    const [{ trails }, fetchTrails] = useTrailsFetch()
+
+    const showTrails = () => {
+        return trails.map(trail => (
+            <TrailListing
+                key={trail.id}
+                clickable
+                image={
+                    game.background_image
+                        ? game.background_image
+                        : NoImage
+                }
+                name={game.name}
+                gameID={game.id}
+                gameSlug={game.slug}
+            />
+        ))
+    }
+
+    // console.log(trails)
     return (
         <div>
-            <h1 class="title">Trail Reports</h1>
+            <h1 className="title">Trail Reports</h1>
             <section id="trail-reports-card">
                 {/* <h2>Trail Reports</h2> */}
                 <p>
@@ -15,7 +36,7 @@ const Trails = () => {
                     everywhere all the time, so please contribute your own intel on the
                     state of trails you’ve just ridden.
                 </p>
-                <ul class="center" id="legend">
+                <ul className="center" id="legend">
                     <li id="green">Trails are dry and good to go!</li>
                     <li id="yellow">Variable conditions present.</li>
                     <li id="red">Trails are closed until further notice.</li>

@@ -8,8 +8,8 @@ import TrailFinder from './TrailFinder'
 const Main = () => {
     return (
         <Router>
-            <div class="background">
-                <div class="overlay">
+            <div className="background">
+                <div className="overlay">
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/trails" component={Trails} />
