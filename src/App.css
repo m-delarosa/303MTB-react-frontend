@@ -69,6 +69,8 @@ p {
   font-size: 18px;
   line-height: 32px;
   color: rgb(51, 51, 51);
+  display: flex;
+  justify-content: center;
 }
 
 .nav a:hover {
@@ -78,21 +80,22 @@ p {
 
 .nav > ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 75%;
 }
 
 /* Header */
 
 .background {
   width: 100%;
-  background-color: black;
   height: 100vh;
+  background-color: black;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(./components/images/header.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  margin-bottom: 10vh;
+  /* margin-bottom: 10vh; */
 }
 
 .overlay {
@@ -107,8 +110,8 @@ p {
   font-family: "Roboto Slab", serif;
   font-size: 3rem;
   font-weight: normal;
-  color: white;
-  max-width: 780px;
+  color: #FAFAFA;
+  /* max-width: 780px; */
   text-align: center;
   padding-top: 6vh;
   /* justify-content: right; */
@@ -122,6 +125,7 @@ p {
 /* Trails Card */
 section {
   height: 100%;
+  width: 75%;
   padding: 30px 40px;
   background-color: #fafafa;
   margin: 0 auto 60px auto;
