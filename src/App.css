@@ -1,38 +1,80 @@
-.App {
+/* Element Boundry Tool */
+
+/* * {
+  border: 1px solid red;
+} */
+
+/* Base Styling */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #e5e5e5;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #495057;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+section a:hover {
+  border-bottom: 1px solid #ff8f00;
+}
+
+form {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  color: #fafafa;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  color: rgb(51, 51, 51);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.center {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Nav Bar */
+
+.nav {
+  background-color: #fafafa;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  border: 1px solid #e5e5e5;
+  padding: 3px 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  color: rgb(51, 51, 51);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav a:hover {
+  color: rgba(73, 80, 87, 0.7);
+  text-decoration: none;
+}
+
+.nav > ul {
+  display: flex;
+  justify-content: space-around;
 }
