@@ -2,6 +2,7 @@ import React from 'react'
 import { useTrailsFetch } from '../hooks/useTrailsFetch'
 import TrailListing from '../elements/TrailListing'
 import Iframe from 'react-iframe'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Trails = () => {
     const [{ trails }, fetchTrails] = useTrailsFetch()
@@ -42,10 +43,23 @@ const Trails = () => {
                     everywhere all the time, so please contribute your own intel on the
                     state of trails you’ve just ridden.
                 </p>
-                <ul className="center" id="legend">
-                    <li id="green">Trails are dry and good to go!</li>
-                    <li id="yellow">Variable conditions present.</li>
-                    <li id="red">Trails are closed until further notice.</li>
+                <ul id="legend">
+                    <li>
+                        <FontAwesomeIcon icon="check-circle" color="green" size="2x" className="legend-icons" />
+                        Trails are dry and good to go!
+                    </li>
+                    <li>
+                        <FontAwesomeIcon icon="exclamation-circle" color="#E1AD01" size="2x" className="legend-icons" />
+                        Variable conditions present.
+                    </li>
+                    <li>
+                        <FontAwesomeIcon icon="times-circle" color="crimson" size="2x" className="legend-icons" />
+                        Trails are closed until further notice.
+                    </li>
+                    <li>
+                        <FontAwesomeIcon icon="question-circle" size="2x" className="legend-icons" />
+                        Trails report needed!
+                    </li>
                 </ul>
                 <table id="trails-table">
                     <tr>

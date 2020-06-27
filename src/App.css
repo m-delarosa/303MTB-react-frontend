@@ -159,37 +159,26 @@ p {
   margin-bottom: 36px;
 }
 
+.legend-icons {
+  position: relative;
+  top: 7px;
+  margin-right: 0.5rem;
+}
 #legend {
   list-style-type: none;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 32px;
   color: rgb(51, 51, 51);
-  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   /* margin-bottom: 2em; */
 }
 
 #legend > li {
   padding-left: 2.5em;
   /* margin-left: 1em; */
-}
-
-#green {
-  background-image: url("./components/images/checked.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-#yellow {
-  background-image: url("./components/images/warning.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-#red {
-  background-image: url("./components/images/forbidden.png");
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 #trails-table {
