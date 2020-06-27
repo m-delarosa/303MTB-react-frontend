@@ -1,9 +1,6 @@
 import React from 'react'
-import Forbidden from '../images/forbidden.png'
-import Checked from '../images/checked.png'
-import Warning from '../images/warning.png'
-import Help from '../images/help.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import moment from 'moment'
 
 const TrailListing = (props) => {
 
@@ -23,7 +20,8 @@ const TrailListing = (props) => {
     const addDate = (date) => {
         if (date === "1970-01-01 00:00:00")
             return "Report Needed"
-        else return date
+        // else return date
+        else return moment(date, "YYYYMMDD").fromNow()
     }
 
     return (
