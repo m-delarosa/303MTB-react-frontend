@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Nav = () => {
+const Nav = (props) => {
+    const { toggleLoginModal } = props
+
+
     return (
         <nav className="nav">
             <ul>
@@ -10,10 +13,10 @@ const Nav = () => {
                 <li><a href="/forums">Forums</a></li>
                 <li><a href="/about">About</a></li>
                 <li id="profile">
-                    <a id="login" href="#login">Login</a> / <a id="register" href="#register">Register</a>
+                    <a id="login" href="#login" onClick={toggleLoginModal}>Login</a> / <a id="register" href="#register">Register</a>
                 </li>
             </ul>
-        </nav>
+        </nav >
     )
 }
 

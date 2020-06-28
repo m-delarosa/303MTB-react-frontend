@@ -205,3 +205,77 @@ tr {
 td {
   padding: 10px 0px;
 }
+
+/* Modal Styling */
+
+.modal-overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+}
+
+.modal-content {
+  min-width: 500px;
+  width: auto;
+  min-height: 290px;
+  height: auto;
+  background-color:#FAFAFA;
+  border-radius: 6px;
+  text-align: center;
+  padding: 20px;
+  padding-top: 40px;
+  position: relative;
+}
+
+input {
+  width: 50%;
+  display: block;
+  margin: 15px auto;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.login-form li,
+.register-form li {
+  color: black;
+  margin-top: 10px;
+  list-style: none;
+}
+
+#response-error-message,
+#response-error-message > li {
+  color: red;
+}
+
+.report-form > textarea {
+  height: 50px;
+  width: 260px;
+  display: block;
+  position: absolute;
+  right: 135px;
+}
+
+.report-form > button {
+  display: block;
+  position: absolute;
+  top: 267px;
+  right: 245px;
+}
+
+#trail-preview-content {
+  width: 1200px;
+  height: 410px;
+}
