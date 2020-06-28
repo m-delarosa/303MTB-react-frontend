@@ -2,19 +2,25 @@ import React, { useState } from 'react'
 import './App.css'
 import Nav from './components/containers/Nav'
 import Main from './components/containers/Main'
+import LoginModal from './components/elements/LoginModal'
+import RegisterModal from './components/elements/RegisterModal'
+import Modal from 'react-modal'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faQuestionCircle, faTimesCircle, faExclamationCircle, faUserCircle } from '@fortawesome/free-solid-svg-icons'
-
-import Modal from 'react-modal'
-import LoginModal from './components/elements/LoginModal'
-
 library.add(faCheckCircle, faQuestionCircle, faTimesCircle, faExclamationCircle, faUserCircle)
+
 Modal.setAppElement('#root')
 
 function App() {
   const [loginModalIsOpen, setLoginModalIsOpen] = useState(false)
+  const [registerModalIsOpen, setRegisterModalIsOpen] = useState(false)
+
+  const toggleRegisterModal = () => {
+    registerModalIsOpen
+      ? setRegisterModalIsOpen(false)
+      : setRegisterModalIsOpen(true)
+  }
 
   const toggleLoginModal = () => {
     loginModalIsOpen
@@ -25,20 +31,14 @@ function App() {
   return (
     <div className="App">
       <Nav toggleLoginModal={toggleLoginModal} />
-      {/* <LoginModal /> */}
-      <Modal
-        isOpen={loginModalIsOpen}
-        className="modal-content login-modal"
-        overlayClassName="modal-overlay"
-        onRequestClose={toggleLoginModal}>
-        <div className="close" onClick={toggleLoginModal}>+</div>
-        <FontAwesomeIcon icon="user-circle" size="8x" />
-        <form className="login-form">
-          <input type="text" name="username" placeholder="Username" />
-          <input type="password" name="password" placeholder="Password" />
-          <button type="submit">Login</button>
-        </form>
-      </Modal>
+      <LoginModal
+        loginModalIsOpen={loginModalIsOpen}
+        toggleRegisterModal={toggleRegisterModal}
+        toggleLoginModal={toggleLoginModal} />
+      <RegisterModal
+        registerModalIsOpen={registerModalIsOpen}
+        toggleRegisterModal={toggleRegisterModal}
+        toggleLoginModal={toggleLoginModal} />
       <Main />
     </div >
   )

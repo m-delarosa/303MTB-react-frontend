@@ -14,6 +14,8 @@ html {
   background-color: #e5e5e5;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 a {
@@ -37,15 +39,29 @@ section a:hover {
 
 form {
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 32px;
   color: #fafafa;
   text-align: center;
 }
 
+input {
+  width: 50%;
+  display: block;
+  margin: 15px auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: .5rem;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
 p {
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 32px;
   color: rgb(51, 51, 51);
 }
@@ -82,7 +98,7 @@ p {
 .nav > ul {
   display: flex;
   justify-content: space-between;
-  width: 75%;
+  width: 79%;
 }
 
 /* Header */
@@ -233,10 +249,19 @@ td {
   position: relative;
 }
 
-input {
-  width: 50%;
-  display: block;
+/* Login/Register Modal Styling */
+
+.email-input {
   margin: 15px auto;
+}
+
+.login-button {
+  padding: .5rem;
+  width: 25%;
+}
+
+.login-register-link {
+  color: #4C8BF5;
 }
 
 .close {
