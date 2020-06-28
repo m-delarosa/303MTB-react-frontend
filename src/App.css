@@ -280,9 +280,8 @@ td {
   list-style: none;
 }
 
-#response-error-message,
-#response-error-message > li {
-  color: red;
+#response-error-message {
+  color: #DE5246;
 }
 
 .report-form > textarea {
