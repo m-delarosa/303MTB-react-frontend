@@ -30,7 +30,11 @@ function App() {
 
   return (
     <div className="App">
-      <Nav toggleLoginModal={toggleLoginModal} />
+      <Nav
+        loginModalIsOpen={loginModalIsOpen}
+        registerModalIsOpen={registerModalIsOpen}
+        toggleLoginModal={toggleLoginModal}
+        toggleRegisterModal={toggleRegisterModal} />
       <LoginModal
         loginModalIsOpen={loginModalIsOpen}
         toggleRegisterModal={toggleRegisterModal}

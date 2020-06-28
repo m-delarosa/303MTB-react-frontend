@@ -20,11 +20,11 @@ const RegisterModal = (props) => {
                 <div className="close" onClick={toggleRegisterModal}>+</div>
                 <FontAwesomeIcon icon="user-circle" size="8x" color="green" />
                 <form class="register-form">
-                    <input type="text" name="name" placeholder="name" />
-                    <input type="text" name="username" placeholder="username" />
-                    <input type="text" name="email" placeholder="email" />
-                    <input type="password" name="password" placeholder="password" />
-                    <button type="submit">Submit</button>
+                    <input type="text" name="name" placeholder="Name" />
+                    <input type="text" name="username" placeholder="Username" />
+                    <input type="text" name="email" placeholder="Email" />
+                    <input type="password" name="password" placeholder="Password" />
+                    <button type="submit" className="login-button">Submit</button>
                     <li><a
                         className="login-register-link"
                         href="#register"

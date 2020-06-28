@@ -1,14 +1,28 @@
 import React from 'react'
 
 const Nav = (props) => {
-    const { toggleLoginModal } = props
+    const { toggleLoginModal, toggleRegisterModal, loginModalIsOpen, registerModalIsOpen } = props
 
     const checkToken = () => {
         return (
             localStorage.token
                 ? <li><a href="/profile">Profile</a></li>
-                : <li id="profile"><a id="login" href="#login" onClick={toggleLoginModal}>Login</a> / <a id="register" href="#register">Register</a></li>
+                : <li id="profile"><a id="login" href="#login" onClick={handleLoginClick}>Login</a> / <a id="register" href="#register" onClick={handleRegisterClick}>Register</a></li>
         )
+    }
+
+    const handleLoginClick = () => {
+        if (registerModalIsOpen) {
+            toggleRegisterModal()
+            toggleLoginModal()
+        } else toggleLoginModal()
+    }
+
+    const handleRegisterClick = () => {
+        if (loginModalIsOpen) {
+            toggleLoginModal()
+            toggleRegisterModal()
+        } else toggleRegisterModal()
     }
 
 
