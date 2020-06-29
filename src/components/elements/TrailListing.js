@@ -6,15 +6,15 @@ const TrailListing = (props) => {
 
     const addStatusImage = (status) => {
         if (status === "Bad / Closed") {
-            return <FontAwesomeIcon icon="times-circle" color="crimson" size="lg" />
+            return <FontAwesomeIcon icon="times-circle" color="crimson" size="2x" />
         }
         else if (status === "Minor Issues") {
-            return <FontAwesomeIcon icon="exclamation-circle" color="#E1AD01" size="lg" />
+            return <FontAwesomeIcon icon="exclamation-circle" color="#E1AD01" size="2x" />
         }
         else if (status === "Unknown") {
-            return <FontAwesomeIcon icon="question-circle" size="lg" />
+            return <FontAwesomeIcon icon="question-circle" size="2x" />
         }
-        else { return <FontAwesomeIcon icon="check-circle" color="green" size="lg" /> }
+        else { return <FontAwesomeIcon icon="check-circle" color="green" size="2x" /> }
     }
 
     const addDate = (date) => {
@@ -27,12 +27,16 @@ const TrailListing = (props) => {
     return (
         <tr>
             <td>
-                <a href="#preview">{props.name}</a>
+                <img className="trail-img" src={props.image}
+                    alt="Example" />
+            </td>
+            <td className="trail-name">
+                <a href="#preview">{props.name} </a>
             </td>
             <td id={`${props.id}-status`}>
                 {addStatusImage(props.status)}
             </td>
-            <td id={`${props.id}-details`}>
+            <td id={`${props.id}-details`} className="condition-details">
                 {props.details}
             </td>
             <td>

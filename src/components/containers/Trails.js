@@ -3,6 +3,7 @@ import { useTrailsFetch } from '../hooks/useTrailsFetch'
 import TrailListing from '../elements/TrailListing'
 import Iframe from 'react-iframe'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import TrailCard from '../elements/TrailCard'
 
 const Trails = () => {
     const [{ trails }, fetchTrails] = useTrailsFetch()
@@ -12,17 +13,18 @@ const Trails = () => {
             <TrailListing
                 key={trail.id}
                 id={trail.id}
+                image={trail.imgMedium}
                 name={trail.name}
-                status={trail.condition_status}
-                details={trail.condition_details}
-                date={trail.condition_date}
+                status={trail.conditionStatus}
+                details={trail.conditionDetails}
+                date={trail.conditionDate}
             />
         ))
     }
 
-    // console.log(trails)
     return (
         <div>
+            {/* <TrailCard /> */}
             <h1 className="title">Trail Reports</h1>
             <section className="trails-card">
                 <Iframe
@@ -63,6 +65,7 @@ const Trails = () => {
                 </ul>
                 <table id="trails-table">
                     <tr>
+                        <th></th>
                         <th>Trail</th>
                         <th>Status</th>
                         <th>Details</th>
