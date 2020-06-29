@@ -300,6 +300,18 @@ td {
   position: relative;
 }
 
+.legend-modal {
+  width: auto;
+  height: auto;
+  background-color:#FAFAFA;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.legend-link {
+  cursor: pointer;
+}
+
 /* Login/Register Modal Styling */
 
 .email-input {
