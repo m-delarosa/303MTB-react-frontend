@@ -3,11 +3,17 @@ import { useTrailsFetch } from '../hooks/useTrailsFetch'
 import TrailListing from '../elements/TrailListing'
 import Iframe from 'react-iframe'
 import LegendModal from '../elements/LegendModal'
+import TrailModal from '../elements/TrailModal'
 // import TrailCard from '../elements/TrailCard'
 
 const Trails = () => {
     const [{ trails }, fetchTrails] = useTrailsFetch()
     const [legendModalIsOpen, setLegendModalIsOpen] = useState(false)
+    const [trailModalIsOpen, setTrailModalIsOpen] = useState(false)
+    const [trailId, setTrailId] = useState(0)
+    // const $iFrame = document.querySelector(".trail-iframe")
+
+    // console.log($iFrame)
 
     const showTrails = () => {
         return trails.map(trail => (
@@ -19,6 +25,8 @@ const Trails = () => {
                 status={trail.conditionStatus}
                 details={trail.conditionDetails}
                 date={trail.conditionDate}
+                toggleTrailModal={toggleTrailModal}
+                showTrailPreview={showTrailPreview}
             />
         ))
     }
@@ -29,13 +37,37 @@ const Trails = () => {
             : setLegendModalIsOpen(true)
     }
 
+    const toggleTrailModal = () => {
+        trailModalIsOpen
+            ? setTrailModalIsOpen(false)
+            : setTrailModalIsOpen(true)
+    }
+
+    const showTrailPreview = (id) => {
+        setTrailId(id)
+        toggleTrailModal()
+    }
+
+    const renderTrailModal = () => {
+        return (
+            trailModalIsOpen
+                ? (<TrailModal
+                    trailModalIsOpen={trailModalIsOpen}
+                    toggleTrailModal={toggleTrailModal}
+                    id={trailId}
+                />)
+                : null
+        )
+    }
+
     return (
         <div>
-            {/* <TrailCard /> */}
-            <h1 className="title">Trail Reports</h1>
             <LegendModal
                 legendModalIsOpen={legendModalIsOpen}
                 toggleLegendModal={toggleLegendModal} />
+            {renderTrailModal()}
+            {/* <TrailCard /> */}
+            <h1 className="title">Trail Reports</h1>
             <section className="trails-card">
                 <Iframe
                     url="https://www.mtbproject.com/widget/map?favs=0&location=ip&x=-11699455&y=4828592&z=8.5&h=500"

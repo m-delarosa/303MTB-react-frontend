@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import moment from 'moment'
 
+
 const TrailListing = (props) => {
 
     const addStatusImage = (status) => {
@@ -24,14 +25,21 @@ const TrailListing = (props) => {
         else return moment(date, "YYYYMMDD").fromNow()
     }
 
+    const handlePreview = () => {
+        props.showTrailPreview(props.id)
+    }
+
     return (
         <tr>
             <td>
-                <img className="trail-img" src={props.image}
-                    alt="Example" />
+                <img
+                    className="trail-img"
+                    src={props.image}
+                    alt="Example"
+                    onClick={handlePreview} />
             </td>
             <td className="trail-name">
-                <a href="#preview">{props.name} </a>
+                <a href="#preview" onClick={handlePreview}>{props.name} </a>
             </td>
             <td id={`${props.id}-status`}>
                 {addStatusImage(props.status)}
