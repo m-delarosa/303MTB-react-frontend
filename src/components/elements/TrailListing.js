@@ -51,9 +51,13 @@ const TrailListing = (props) => {
                 {addDate(props.date)}
             </td>
             <td className="trail-actions">
-                <FontAwesomeIcon icon={['far', 'heart']} color="crimson" className="trail-listing-action center" size="2x" />
-                <FontAwesomeIcon icon={['far', 'edit']} color="#333333" className="trail-listing-action center trail-edit-icon" size="2x" />
-                <FontAwesomeIcon icon={['fas', 'directions']} color="#333333" className="trail-listing-action center" size="2x" />
+                <FontAwesomeIcon icon={['far', 'heart']} color="#ff8f00" className="trail-listing-action center" />
+                <FontAwesomeIcon icon={['far', 'edit']} color="#ff8f00" className="trail-listing-action center trail-edit-icon" />
+                <a
+                    href={`https://www.google.com/maps/dir/?api=1&origin=${props.userLocation.lat},${props.userLocation.long}&destination=${props.trailLat},${props.trailLong}`}
+                    target="_blank">
+                    <FontAwesomeIcon icon={['fas', 'directions']} color="#ff8f00" className="trail-listing-action center" />
+                </a>
             </td>
         </tr >
     )

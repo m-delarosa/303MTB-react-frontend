@@ -11,9 +11,21 @@ const Trails = () => {
     const [legendModalIsOpen, setLegendModalIsOpen] = useState(false)
     const [trailModalIsOpen, setTrailModalIsOpen] = useState(false)
     const [trailId, setTrailId] = useState(0)
+    const [userLocation, setUserLocation] = useState({})
     // const $iFrame = document.querySelector(".trail-iframe")
 
     // console.log($iFrame)
+
+    const successCallback = (position) => {
+        console.log(position)
+        setUserLocation({ lat: position.coords.latitude, long: position.coords.longitude })
+    }
+
+    const errorCallback = (error) => {
+        console.error(error)
+    }
+
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
 
     const showTrails = () => {
         return trails.map(trail => (
@@ -27,6 +39,9 @@ const Trails = () => {
                 date={trail.conditionDate}
                 toggleTrailModal={toggleTrailModal}
                 showTrailPreview={showTrailPreview}
+                userLocation={userLocation}
+                trailLat={trail.latitude}
+                trailLong={trail.longitude}
             />
         ))
     }
@@ -69,14 +84,14 @@ const Trails = () => {
             {/* <TrailCard /> */}
             <h1 className="title">Trail Reports</h1>
             <section className="trails-card">
-                <Iframe
+                {/* <Iframe
                     url="https://www.mtbproject.com/widget/map?favs=0&location=ip&x=-11699455&y=4828592&z=8.5&h=500"
                     className="trail-map"
                     width="100%"
                     height="500px"
                     allow="geolocation"
                     frameBorder="0"
-                />
+                /> */}
                 {/* <iframe style="width:100%; max-width:1200px; height:500px;" frameborder="0" scrolling="no" src="https://www.mtbproject.com/widget/map?favs=1&location=ip&x=-11699455&y=4828592&z=8.5&h=500"></iframe> */}
                 <p>
                     When we ride mud in Colorado, we ruin

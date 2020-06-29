@@ -261,6 +261,7 @@ td {
 .trail-listing-action {
     cursor: pointer;
     margin: 10px auto;
+    font-size: 1.5em;
 }
 
 .trail-edit-icon {
