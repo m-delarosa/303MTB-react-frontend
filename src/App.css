@@ -221,7 +221,7 @@ tr {
 
 td {
   padding-top: 10px;
-  width: 10%
+  width: 10%;
 }
 
 .condition-details {
@@ -258,12 +258,14 @@ td {
   object-fit: cover;
   cursor: pointer;
 }
-.favorite-icon {
-    position: relative;
-    top: 4px;
-    right: -653px;
-    font-size: 38px;
+.trail-listing-action {
     cursor: pointer;
+    margin: 10px auto;
+}
+
+.trail-edit-icon {
+  position: relative;
+  left: 5px;
 }
 
 .trail-card-img {

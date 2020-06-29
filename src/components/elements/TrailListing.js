@@ -50,8 +50,10 @@ const TrailListing = (props) => {
             <td>
                 {addDate(props.date)}
             </td>
-            <td>
-                <a href="#edit" className="edit-button">Edit</a>
+            <td className="trail-actions">
+                <FontAwesomeIcon icon={['far', 'heart']} color="crimson" className="trail-listing-action center" size="2x" />
+                <FontAwesomeIcon icon={['far', 'edit']} color="#333333" className="trail-listing-action center trail-edit-icon" size="2x" />
+                <FontAwesomeIcon icon={['fas', 'directions']} color="#333333" className="trail-listing-action center" size="2x" />
             </td>
         </tr >
     )
