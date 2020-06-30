@@ -7,10 +7,13 @@ import RegisterModal from './components/elements/RegisterModal'
 import Modal from 'react-modal'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCheckCircle, faQuestionCircle, faTimesCircle, faExclamationCircle, faUserCircle, faHeart as faHeartSolid, faDirections, faEdit as FaEditSolid } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCheckCircle, faQuestionCircle, faTimesCircle, faExclamationCircle,
+  faUserCircle, faHeart as faHeartSolid, faDirections, faEdit as FaEditSolid, faTree
+} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as faHeartRegular, faEdit } from '@fortawesome/free-regular-svg-icons'
 library.add(faCheckCircle, faQuestionCircle, faTimesCircle, faExclamationCircle,
-  faUserCircle, faHeartRegular, faHeartSolid, faEdit, FaEditSolid, faDirections)
+  faUserCircle, faHeartRegular, faHeartSolid, faEdit, FaEditSolid, faDirections, faTree)
 
 Modal.setAppElement('#root')
 

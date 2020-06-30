@@ -4,28 +4,30 @@ import TrailListing from '../elements/TrailListing'
 import Iframe from 'react-iframe'
 import LegendModal from '../elements/LegendModal'
 import TrailModal from '../elements/TrailModal'
+import TrailUpdateModal from '../elements/TrailUpdateModal'
 // import TrailCard from '../elements/TrailCard'
 
 const Trails = () => {
     const [{ trails }, fetchTrails] = useTrailsFetch()
     const [legendModalIsOpen, setLegendModalIsOpen] = useState(false)
     const [trailModalIsOpen, setTrailModalIsOpen] = useState(false)
+    const [trailUpdateModalIsOpen, setTrailUpdateModalIsOpen] = useState(true)
     const [trailId, setTrailId] = useState(0)
     const [userLocation, setUserLocation] = useState({})
     // const $iFrame = document.querySelector(".trail-iframe")
 
     // console.log($iFrame)
 
-    const successCallback = (position) => {
-        console.log(position)
-        setUserLocation({ lat: position.coords.latitude, long: position.coords.longitude })
-    }
+    // const successCallback = (position) => {
+    //     console.log(position)
+    //     setUserLocation({ lat: position.coords.latitude, long: position.coords.longitude })
+    // }
 
-    const errorCallback = (error) => {
-        console.error(error)
-    }
+    // const errorCallback = (error) => {
+    //     console.error(error)
+    // }
 
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+    // navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
 
     const showTrails = () => {
         return trails.map(trail => (
@@ -38,6 +40,7 @@ const Trails = () => {
                 details={trail.conditionDetails}
                 date={trail.conditionDate}
                 toggleTrailModal={toggleTrailModal}
+                toggleTrailUpdateModal={toggleTrailUpdateModal}
                 showTrailPreview={showTrailPreview}
                 userLocation={userLocation}
                 trailLat={trail.latitude}
@@ -56,6 +59,11 @@ const Trails = () => {
         trailModalIsOpen
             ? setTrailModalIsOpen(false)
             : setTrailModalIsOpen(true)
+    }
+    const toggleTrailUpdateModal = () => {
+        trailUpdateModalIsOpen
+            ? setTrailUpdateModalIsOpen(false)
+            : setTrailUpdateModalIsOpen(true)
     }
 
     const showTrailPreview = (id) => {
@@ -81,6 +89,9 @@ const Trails = () => {
                 legendModalIsOpen={legendModalIsOpen}
                 toggleLegendModal={toggleLegendModal} />
             {renderTrailModal()}
+            <TrailUpdateModal
+                trailUpdateModalIsOpen={trailUpdateModalIsOpen}
+                toggleTrailUpdateModal={toggleTrailUpdateModal} />
             {/* <TrailCard /> */}
             <h1 className="title">Trail Reports</h1>
             <section className="trails-card">
@@ -93,11 +104,13 @@ const Trails = () => {
                     frameBorder="0"
                 /> */}
                 {/* <iframe style="width:100%; max-width:1200px; height:500px;" frameborder="0" scrolling="no" src="https://www.mtbproject.com/widget/map?favs=1&location=ip&x=-11699455&y=4828592&z=8.5&h=500"></iframe> */}
-                <p>
+                <p className="trailcard-blurb">
                     When we ride mud in Colorado, we ruin
                     trails. Most of the trails listed below are not maintained by municipal
                     staff, instead they rely on volunteers to repair them. One day's worth
                     of damage can often take six months to a year before it is repaired.
+                {/* </p>
+                <p> */}
                     We do our best to maintain trail reports, but we can’t be
                     everywhere all the time, so please contribute your own intel on the
                     state of trails you’ve just ridden.
@@ -108,7 +121,7 @@ const Trails = () => {
                         <th>Trail</th>
                         <th onClick={toggleLegendModal} className="legend-link">Status*</th>
                         <th>Details</th>
-                        <th>Reported</th>
+                        <th>Last Report</th>
                         <th>Actions</th>
                     </tr>
                     {showTrails()}

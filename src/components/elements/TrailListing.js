@@ -52,7 +52,11 @@ const TrailListing = (props) => {
             </td>
             <td className="trail-actions">
                 <FontAwesomeIcon icon={['far', 'heart']} color="#ff8f00" className="trail-listing-action center" />
-                <FontAwesomeIcon icon={['far', 'edit']} color="#ff8f00" className="trail-listing-action center trail-edit-icon" />
+                <FontAwesomeIcon
+                    icon={['far', 'edit']}
+                    color="#ff8f00"
+                    className="trail-listing-action center trail-edit-icon"
+                    onClick={props.toggleTrailUpdateModal} />
                 <a
                     href={`https://www.google.com/maps/dir/?api=1&origin=${props.userLocation.lat},${props.userLocation.long}&destination=${props.trailLat},${props.trailLong}`}
                     target="_blank">
