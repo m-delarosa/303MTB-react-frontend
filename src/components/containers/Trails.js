@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTrailsFetch } from '../hooks/useTrailsFetch'
 import TrailListing from '../elements/TrailListing'
 import Iframe from 'react-iframe'
@@ -14,20 +14,19 @@ const Trails = () => {
     const [trailUpdateModalIsOpen, setTrailUpdateModalIsOpen] = useState(true)
     const [trailId, setTrailId] = useState(0)
     const [userLocation, setUserLocation] = useState({})
-    // const $iFrame = document.querySelector(".trail-iframe")
 
-    // console.log($iFrame)
+    useEffect(() => {
+        const successCallback = (position) => {
+            console.log(position)
+            setUserLocation({ lat: position.coords.latitude, long: position.coords.longitude })
+        }
 
-    // const successCallback = (position) => {
-    //     console.log(position)
-    //     setUserLocation({ lat: position.coords.latitude, long: position.coords.longitude })
-    // }
+        const errorCallback = (error) => {
+            console.error(error)
+        }
 
-    // const errorCallback = (error) => {
-    //     console.error(error)
-    // }
-
-    // navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+    }, [])
 
     const showTrails = () => {
         return trails.map(trail => (
