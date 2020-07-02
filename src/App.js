@@ -9,11 +9,11 @@ import Modal from 'react-modal'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faCheckCircle, faQuestionCircle, faTimesCircle, faExclamationCircle,
-  faUserCircle, faHeart as faHeartSolid, faDirections, faEdit as FaEditSolid, faTree
+  faUserCircle, faHeart as faHeartSolid, faDirections, faEdit as FaEditSolid, faTree, faSearch
 } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as faHeartRegular, faEdit } from '@fortawesome/free-regular-svg-icons'
 library.add(faCheckCircle, faQuestionCircle, faTimesCircle, faExclamationCircle,
-  faUserCircle, faHeartRegular, faHeartSolid, faEdit, FaEditSolid, faDirections, faTree)
+  faUserCircle, faHeartRegular, faHeartSolid, faEdit, FaEditSolid, faDirections, faTree, faSearch)
 
 Modal.setAppElement('#root')
 

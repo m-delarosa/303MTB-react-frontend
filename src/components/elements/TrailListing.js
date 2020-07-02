@@ -21,12 +21,19 @@ const TrailListing = (props) => {
     const addDate = (date) => {
         if (date === "1970-01-01 00:00:00")
             return "Report Needed"
-        // else return date
         else return moment(date, "YYYYMMDD").fromNow()
     }
 
     const handlePreview = () => {
         props.showTrailPreview(props.id)
+    }
+
+    const handleFavorite = () => {
+        props.action(props.trail)
+    }
+
+    const handleUpdate = () => {
+        props.showTrailUpdateModal(props.id)
     }
 
     return (
@@ -51,14 +58,17 @@ const TrailListing = (props) => {
                 {addDate(props.date)}
             </td>
             <td className="trail-actions">
-                <FontAwesomeIcon icon={['far', 'heart']} color="#ff8f00" className="trail-listing-action center" />
+                {props.favoriteTrails.find(trail => props.id === trail.id)
+                    ? <FontAwesomeIcon icon={['fas', 'heart']} color="#ff8f00" className="trail-listing-action center" onClick={handleFavorite} />
+                    : <FontAwesomeIcon icon={['far', 'heart']} color="#ff8f00" className="trail-listing-action center" onClick={handleFavorite} />}
                 <FontAwesomeIcon
                     icon={['far', 'edit']}
                     color="#ff8f00"
                     className="trail-listing-action center trail-edit-icon"
-                    onClick={props.toggleTrailUpdateModal} />
+                    onClick={handleUpdate} />
                 <a
                     href={`https://www.google.com/maps/dir/?api=1&origin=${props.userLocation.lat},${props.userLocation.long}&destination=${props.trailLat},${props.trailLong}`}
+                    rel="noopener noreferrer"
                     target="_blank">
                     <FontAwesomeIcon icon={['fas', 'directions']} color="#ff8f00" className="trail-listing-action center" />
                 </a>

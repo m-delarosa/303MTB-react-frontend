@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const RegisterModal = (props) => {
-    const { trailUpdateModalIsOpen, toggleTrailUpdateModal } = props
+    const { trailUpdateModalIsOpen, toggleTrailUpdateModal, updateTrailStatus } = props
 
-    const handleTrailUpdate = () => {
-        console.log("Submit action logged!")
+    const [description, setDescription] = useState('')
+    const [status, setStatus] = useState('')
+
+    const handleTrailUpdate = (e) => {
+        e.preventDefault()
+        updateTrailStatus(description)
+        setDescription('')
     }
 
     return (
@@ -39,9 +44,12 @@ const RegisterModal = (props) => {
                     <textarea
                         className="update-textarea center"
                         placeholder="Optional details"
+                        value={description}
                         cols="40"
                         rows="3"
-                        maxLength="125"></textarea>
+                        maxLength="125"
+                        onChange={(e) => setDescription(e.target.value)} >
+                    </textarea>
                     <button type="submit" className="login-button">Submit</button>
                     <li><a
                         className="login-register-link"
