@@ -399,3 +399,7 @@ td {
 .update-labels > p {
   margin-top: 0;
 }
+
+input[type="radio"] {
+  transform: scale(1.5);
+}

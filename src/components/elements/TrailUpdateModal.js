@@ -10,9 +10,12 @@ const RegisterModal = (props) => {
 
     const handleTrailUpdate = (e) => {
         e.preventDefault()
-        updateTrailStatus(description)
+        updateTrailStatus(status, description)
         setDescription('')
+        setStatus('')
     }
+
+
 
     return (
         <div>
@@ -25,20 +28,20 @@ const RegisterModal = (props) => {
                 <FontAwesomeIcon icon="tree" size="8x" color="green" />
                 <form className="register-form" onSubmit={handleTrailUpdate}>
                     <div className="update-radio-buttons">
-                        <label for="All Clear" className="update-labels">
+                        <label for="Status" className="update-labels">
                             <FontAwesomeIcon icon="check-circle" color="green" size="2x" />
                             <p>All Clear</p>
-                            <input type="radio" name="All Clear" value="All Clear" />
+                            <input type="radio" name="Status" value="All Clear" required onChange={(e) => setStatus(e.target.value)} />
                         </label>
                         <label for="Minor Issues" className="update-labels">
                             <FontAwesomeIcon icon="exclamation-circle" color="#E1AD01" size="2x" />
                             <p>Minor Issues</p>
-                            <input type="radio" name="Minor Issues" value="Minor Issues" />
+                            <input type="radio" name="Status" value="Minor Issues" onChange={(e) => setStatus(e.target.value)} />
                         </label>
                         <label for="Bad / Closed" className="update-labels">
                             <FontAwesomeIcon icon="times-circle" color="crimson" size="2x" />
                             <p>Bad / Closed</p>
-                            <input type="radio" name="Bad / Closed" value="Bad / Closed" />
+                            <input type="radio" name="Status" value="Bad / Closed" onChange={(e) => setStatus(e.target.value)} />
                         </label>
                     </div>
                     <textarea

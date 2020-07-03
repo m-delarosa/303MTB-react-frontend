@@ -6,8 +6,6 @@ import TrailListing from '../elements/TrailListing'
 import Iframe from 'react-iframe'
 import LegendModal from '../elements/LegendModal'
 import TrailModal from '../elements/TrailModal'
-import TrailUpdateModal from '../elements/TrailUpdateModal'
-// import TrailCard from '../elements/TrailCard'
 
 import { StyledSearchBar, StyledSearchBarContent } from '../styles/StyledSearchBar'
 
@@ -16,17 +14,14 @@ const Trails = () => {
     const [{ trails }, fetchTrails] = useTrailsFetch()
     const [legendModalIsOpen, setLegendModalIsOpen] = useState(false)
     const [trailModalIsOpen, setTrailModalIsOpen] = useState(false)
-    const [trailUpdateModalIsOpen, setTrailUpdateModalIsOpen] = useState(false)
     const [trailId, setTrailId] = useState(0)
     const [userLocation, setUserLocation] = useState({})
     const [favoriteTrails, setFavoriteTrails] = useState([])
     const [filteredTrails, setFilteredTrails] = useState([])
-    const [status, setStatus] = useState('')
-    const [description, setDescription] = useState('')
     const api_key = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
-        fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=50&key=${api_key}`)
+        fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=5&key=${api_key}`)
             .then(response => response.json())
             .then(result => setFilteredTrails(result.trails))
             .then(console.log("Trails Fetched!", filteredTrails))
@@ -81,7 +76,6 @@ const Trails = () => {
                 details={trail.conditionDetails}
                 date={trail.conditionDate}
                 toggleTrailModal={toggleTrailModal}
-                showTrailUpdateModal={showTrailUpdateModal}
                 showTrailPreview={showTrailPreview}
                 userLocation={userLocation}
                 trailLat={trail.latitude}
@@ -98,29 +92,15 @@ const Trails = () => {
             : setLegendModalIsOpen(true)
     }
 
-    const toggleTrailModal = (id) => {
+    const toggleTrailModal = () => {
         trailModalIsOpen
             ? setTrailModalIsOpen(false)
             : setTrailModalIsOpen(true)
-    }
-    const toggleTrailUpdateModal = () => {
-        trailUpdateModalIsOpen
-            ? setTrailUpdateModalIsOpen(false)
-            : setTrailUpdateModalIsOpen(true)
     }
 
     const showTrailPreview = (id) => {
         setTrailId(id)
         toggleTrailModal()
-    }
-
-    const showTrailUpdateModal = (id) => {
-        setTrailId(id)
-        toggleTrailUpdateModal()
-    }
-
-    const updateTrailStatus = (description) => {
-        setDescription(description)
     }
 
     const renderTrailModal = () => {
@@ -135,30 +115,12 @@ const Trails = () => {
         )
     }
 
-    const renderTrailUpdateModal = () => {
-        return (
-            trailUpdateModalIsOpen
-                ? (<TrailUpdateModal
-                    trailUpdateModalIsOpen={trailUpdateModalIsOpen}
-                    toggleTrailUpdateModal={toggleTrailUpdateModal}
-                    updateTrailStatus={updateTrailStatus}
-                />)
-                : null
-        )
-    }
-
     return (
         <div>
             <LegendModal
                 legendModalIsOpen={legendModalIsOpen}
                 toggleLegendModal={toggleLegendModal} />
             {renderTrailModal()}
-            {renderTrailUpdateModal()}
-            {/* <TrailUpdateModal
-                trailUpdateModalIsOpen={trailUpdateModalIsOpen}
-                toggleTrailUpdateModal={toggleTrailUpdateModal}
-                updateTrailStatus={updateTrailStatus} /> */}
-            {/* <TrailCard /> */}
             <h1 className="title">Trail Reports</h1>
             <section className="trails-card">
                 {/* <StyledSearchBar>
@@ -200,7 +162,6 @@ const Trails = () => {
                     <FavoriteTrails
                         trails={favoriteTrails}
                         toggleTrailModal={toggleTrailModal}
-                        toggleTrailUpdateModal={toggleTrailUpdateModal}
                         showTrailPreview={showTrailPreview}
                         userLocation={userLocation}
                         favoriteTrails={favoriteTrails}
