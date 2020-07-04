@@ -129,15 +129,14 @@ const Trails = () => {
                         <input type="text" placeholder="Find a Trail" />
                     </StyledSearchBarContent>
                 </StyledSearchBar> */}
-                {/* <Iframe
+                <Iframe
                     url="https://www.mtbproject.com/widget/map?favs=0&location=ip&x=-11699455&y=4828592&z=8.5&h=500"
                     className="trail-map"
                     width="100%"
                     height="500px"
                     allow="geolocation"
                     frameBorder="0"
-                /> */}
-                {/* <iframe style="width:100%; max-width:1200px; height:500px;" frameborder="0" scrolling="no" src="https://www.mtbproject.com/widget/map?favs=1&location=ip&x=-11699455&y=4828592&z=8.5&h=500"></iframe> */}
+                />
                 <p className="trailcard-blurb">
                     When we ride mud in Colorado, we ruin
                     trails. Most of the trails listed below are not maintained by municipal

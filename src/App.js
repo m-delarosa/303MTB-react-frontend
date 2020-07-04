@@ -5,6 +5,7 @@ import Main from './components/containers/Main'
 import LoginModal from './components/elements/LoginModal'
 import RegisterModal from './components/elements/RegisterModal'
 import Modal from 'react-modal'
+import SideDrawer from './components/elements/SideDrawer'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -20,6 +21,7 @@ Modal.setAppElement('#root')
 function App() {
   const [loginModalIsOpen, setLoginModalIsOpen] = useState(false)
   const [registerModalIsOpen, setRegisterModalIsOpen] = useState(false)
+  const [sideDrawerIsOpen, setSideDrawerIsOpen] = useState(false)
 
   const toggleRegisterModal = () => {
     registerModalIsOpen
@@ -33,13 +35,29 @@ function App() {
       : setLoginModalIsOpen(true)
   }
 
+  const toggleSideDrawer = () => {
+    sideDrawerIsOpen
+      ? setSideDrawerIsOpen(false)
+      : setSideDrawerIsOpen(true)
+  }
+
+  const showSideDrawer = () => {
+    return (sideDrawerIsOpen
+      ? <SideDrawer toggleSideDrawer={toggleSideDrawer} />
+      : null
+    )
+  }
+
   return (
-    <div className="App">
+    <div className="app">
       <Nav
         loginModalIsOpen={loginModalIsOpen}
         registerModalIsOpen={registerModalIsOpen}
         toggleLoginModal={toggleLoginModal}
-        toggleRegisterModal={toggleRegisterModal} />
+        toggleRegisterModal={toggleRegisterModal}
+        sideDrawerIsOpen={sideDrawerIsOpen}
+        toggleSideDrawer={toggleSideDrawer} />
+      {showSideDrawer()}
       <LoginModal
         loginModalIsOpen={loginModalIsOpen}
         toggleRegisterModal={toggleRegisterModal}

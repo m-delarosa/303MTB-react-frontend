@@ -4,7 +4,7 @@
   border: 1px solid red;
 } */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab&family=Roboto:wght@400;500&display=swap');
 
 /* Base Styling */
 body,
@@ -19,7 +19,7 @@ html {
 }
 
 a {
-  color: #495057;
+  color: #303030;
   text-decoration: none;
 }
 
@@ -72,9 +72,41 @@ p {
   justify-content: center;
 }
 
+/* .app {
+  height: 100%;
+} */
+
 /* Nav Bar */
 
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: #fafafa;
+  top: 0;
+  left: 0;
+  height: 5vh;
+}
+
 .nav {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* .nav-logo {
+  align-self: flex-start;
+} */
+
+.nav-logo a {
+color: #303030;
+font-family: 'Bebas Neue', serif;
+font-size: 40px;
+height: 100%;
+}
+/* .nav {
   background-color: #fafafa;
   position: fixed;
   top: 0;
@@ -88,20 +120,52 @@ p {
   color: rgb(51, 51, 51);
   display: flex;
   justify-content: center;
-}
+} */
 
-.nav a:hover {
+.nav a:hover, .nav a:active {
   color: rgba(73, 80, 87, 0.7);
   text-decoration: none;
+  /* border-bottom: 1px solid rgba(73, 80, 87, 0.7); */
 }
 
 .nav > ul {
+  align-self: center;
   display: flex;
   justify-content: space-between;
   width: 79%;
+  font-size: 20px;
+  padding-left: 5.2rem;
 }
 
-/* Header */
+.nav-login {
+  padding-left: 9.2rem;
+  font-size: 20px;;
+}
+
+.profile-icon {
+  font-size: 38px;
+  display: none;
+}
+
+.side-drawer {
+  height: 100%;
+  background-color: #FAFAFA;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+  0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  max-width: 400px;
+}
+
+.side-drawer li {
+  margin: 0.5rem 0;
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Main */
 
 .background {
   width: 100%;
@@ -246,11 +310,6 @@ td {
   /* Remember to change above prop once done testing */
   overflow: hidden;
 }
-
-/* .mui-card {
-  margin-top: 100px;
-  margin-left: 25vw;
-} */
 
 .trail-img {
   width: 10vw;
