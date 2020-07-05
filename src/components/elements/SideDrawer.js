@@ -1,23 +1,30 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 const SideDrawer = (props) => {
-    const { toggleSideDrawer } = props
+    const { toggleSideDrawer, show, handleLoginClick, handleRegisterClick } = props
 
-    const handleOverlayClick = () => {
-        toggleSideDrawer()
+    let drawerClasses = 'side-drawer'
+    if (show) {
+        drawerClasses = 'side-drawer open'
     }
 
     return (
-        <div className="modal-overlay" onClick={handleOverlayClick}>
-            <nav className="side-drawer">
-                <ul>
-                    <li><a href="/trails">Trail Reports</a></li>
-                    <li><a href="/trailfinder">Trail Finder</a></li>
-                    <li><a href="/forums">Forums</a></li>
-                    <li><a href="/about">About</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav className={drawerClasses}>
+            <ul>
+                <li>
+                    {localStorage.token
+                        ? <a href="/profile">Profile</a>
+                        : <a href="#login" onClick={handleLoginClick}>Login</a> / <a id="register" href="#register" onClick={handleRegisterClick}>Register</a>
+                    }
+                </li>
+                <li><a href="/trails">Trail Reports</a></li>
+                <li><a href="/trailfinder">Trail Finder</a></li>
+                <li><a href="/forums">Forums</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
     )
 }
 

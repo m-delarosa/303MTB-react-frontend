@@ -6,6 +6,7 @@ import LoginModal from './components/elements/LoginModal'
 import RegisterModal from './components/elements/RegisterModal'
 import Modal from 'react-modal'
 import SideDrawer from './components/elements/SideDrawer'
+import Overlay from './components/elements/Overlay'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -41,11 +42,26 @@ function App() {
       : setSideDrawerIsOpen(true)
   }
 
-  const showSideDrawer = () => {
-    return (sideDrawerIsOpen
-      ? <SideDrawer toggleSideDrawer={toggleSideDrawer} />
-      : null
-    )
+  let sideDrawer
+  let overlay
+
+  if (sideDrawerIsOpen) {
+    // sideDrawer = <SideDrawer toggleSideDrawer={toggleSideDrawer} show={sideDrawerIsOpen} />
+    overlay = <Overlay toggleSideDrawer={toggleSideDrawer} />
+  }
+
+  const handleLoginClick = () => {
+    if (registerModalIsOpen) {
+      toggleRegisterModal()
+      toggleLoginModal()
+    } else toggleLoginModal()
+  }
+
+  const handleRegisterClick = () => {
+    if (loginModalIsOpen) {
+      toggleLoginModal()
+      toggleRegisterModal()
+    } else toggleRegisterModal()
   }
 
   return (
@@ -56,8 +72,18 @@ function App() {
         toggleLoginModal={toggleLoginModal}
         toggleRegisterModal={toggleRegisterModal}
         sideDrawerIsOpen={sideDrawerIsOpen}
-        toggleSideDrawer={toggleSideDrawer} />
-      {showSideDrawer()}
+        toggleSideDrawer={toggleSideDrawer}
+        handleLoginClick={handleLoginClick}
+        handleRegisterClick={handleRegisterClick} />
+      {/* {sideDrawer} */}
+      <SideDrawer
+        toggleSideDrawer={toggleSideDrawer}
+        show={sideDrawerIsOpen}
+        handleLoginClick={handleLoginClick}
+        handleRegisterClick={handleRegisterClick} />
+      {overlay}
+      {/* {showOverlay} */}
+      {/* <Overlay toggleSideDrawer={toggleSideDrawer} /> */}
       <LoginModal
         loginModalIsOpen={loginModalIsOpen}
         toggleRegisterModal={toggleRegisterModal}

@@ -5,31 +5,30 @@ import HamburgerMenu from 'react-hamburger-menu'
 
 const Nav = (props) => {
     const { toggleLoginModal, toggleRegisterModal, loginModalIsOpen,
-        registerModalIsOpen, sideDrawerIsOpen, toggleSideDrawer } = props
+        registerModalIsOpen, sideDrawerIsOpen, toggleSideDrawer, handleLoginClick, handleRegisterClick } = props
 
     const checkToken = () => {
         return (
-            localStorage.token
-                ? <a className="nav-login" href="/profile"><FontAwesomeIcon icon="user-circle" className="profile-icon" color="#495057" /></a>
-                : <a className="nav-login" href="#login" onClick={handleLoginClick}>Login</a> / <a id="register" href="#register" onClick={handleRegisterClick}>Register</a>
+            localStorage.token !== isNaN
+                ? <a className="" href="/profile"><FontAwesomeIcon icon="user-circle" className="profile-icon" color="#495057" /></a>
+                : <a className="nav-login" href="#login" onClick={handleLoginClick}>Login</a> / <a id="register" className="nav-login" href="#register" onClick={handleRegisterClick}>Register</a>
         )
     }
 
-    const handleLoginClick = () => {
-        if (registerModalIsOpen) {
-            toggleRegisterModal()
-            toggleLoginModal()
-        } else toggleLoginModal()
-    }
+    // const handleLoginClick = () => {
+    //     if (registerModalIsOpen) {
+    //         toggleRegisterModal()
+    //         toggleLoginModal()
+    //     } else toggleLoginModal()
+    // }
 
-    const handleRegisterClick = () => {
-        if (loginModalIsOpen) {
-            toggleLoginModal()
-            toggleRegisterModal()
-        } else toggleRegisterModal()
-    }
+    // const handleRegisterClick = () => {
+    //     if (loginModalIsOpen) {
+    //         toggleLoginModal()
+    //         toggleRegisterModal()
+    //     } else toggleRegisterModal()
+    // }
 
-    //If undoing, just undo until header tags below disappear. 
     return (
         <header className="header">
             <nav className="nav">
@@ -41,17 +40,33 @@ const Nav = (props) => {
                     <li><a href="/forums">Forums</a></li>
                     <li><a href="/about">About</a></li>
                 </ul>
-                <div>{checkToken()}</div>
+                {localStorage.token
+                    ? (
+                        <div className="nav-profile">
+                            <a href="/profile"><FontAwesomeIcon icon="user-circle" className="profile-icon" color="#303030" /></a>
+                        </div>
+                    )
+                    : (
+                        <div className="nav-login">
+                            <a href="#login" onClick={handleLoginClick}>Login</a> / <a id="register" href="#register" onClick={handleRegisterClick}>Register</a>
+                        </div>
+                    )
+                }
+                {/* <div className="nav-login">
+                    <a href="#login" onClick={handleLoginClick}>Login</a> / <a id="register" href="#register" onClick={handleRegisterClick}>Register</a>
+                </div> */}
+                {/* {checkToken()} */}
                 <HamburgerMenu
                     isOpen={sideDrawerIsOpen}
                     menuClicked={toggleSideDrawer}
-                    width={18}
-                    height={15}
-                    strokeWidth={2}
+                    width={30}
+                    height={22}
+                    strokeWidth={3}
                     rotate={0}
                     color='#303030'
                     borderRadius={0}
                     animationDuration={0.5}
+                    className="hamburger"
                 />
             </nav >
         </header>

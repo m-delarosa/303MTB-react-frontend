@@ -81,24 +81,18 @@ p {
 .header {
   position: fixed;
   width: 100%;
-  background-color: #fafafa;
+  background-color: #FAFAFA;
   top: 0;
   left: 0;
-  height: 5vh;
+  height: 50px;
+  z-index: 200;
 }
 
 .nav {
   display: flex;
-  height: 100%;
-  width: 100%;
-  /* justify-content: space-between; */
   align-items: center;
   padding: 0 1rem;
 }
-
-/* .nav-logo {
-  align-self: flex-start;
-} */
 
 .nav-logo a {
 color: #303030;
@@ -106,26 +100,10 @@ font-family: 'Bebas Neue', serif;
 font-size: 40px;
 height: 100%;
 }
-/* .nav {
-  background-color: #fafafa;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 99;
-  border: 1px solid #e5e5e5;
-  padding: 3px 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 18px;
-  line-height: 32px;
-  color: rgb(51, 51, 51);
-  display: flex;
-  justify-content: center;
-} */
 
 .nav a:hover, .nav a:active {
   color: rgba(73, 80, 87, 0.7);
   text-decoration: none;
-  /* border-bottom: 1px solid rgba(73, 80, 87, 0.7); */
 }
 
 .nav > ul {
@@ -138,13 +116,34 @@ height: 100%;
 }
 
 .nav-login {
-  padding-left: 9.2rem;
-  font-size: 20px;;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 72px;
+}
+
+@media (max-width: 768px) {
+  .nav > ul, .nav-login, .profile-icon {
+    display: none;
+  }
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 0.5rem;
+    padding: 0;
+  } 
+  .nav-logo {
+    
+  }
+  .hamburger {
+    margin-left: 10px;
+    margin-right: 10px;
+    bottom: 2px;
+  }
 }
 
 .profile-icon {
   font-size: 38px;
-  display: none;
+  margin-left: 172px;
 }
 
 .side-drawer {
@@ -157,12 +156,29 @@ height: 100%;
   right: 0;
   width: 60%;
   max-width: 400px;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-out;
+  z-index: 200;
+  top: 50px;
+}
+
+.side-drawer.open {
+  transform: translateX(0)
 }
 
 .side-drawer li {
   margin: 0.5rem 0;
   padding-left: 0.5rem;
   font-size: 1.2rem;
+}
+
+@media (min-width: 769px) {
+  .side-drawer {
+    display: none;
+  }
+  .hamburger {
+    display: none;
+  }
 }
 
 /* Main */
@@ -215,6 +231,12 @@ height: 100%;
   border-radius: 6px;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .trails-card {
+    width: 77vw;
+  }
 }
 
 .trail-map {
