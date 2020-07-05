@@ -5,7 +5,9 @@
 } */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab&family=Roboto:wght@400;500&display=swap');
-
+@-ms-viewport{
+  width: device-width;
+}
 /* Base Styling */
 body,
 html {
@@ -16,6 +18,7 @@ html {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  width: 100vw;
 }
 
 a {
@@ -184,7 +187,7 @@ height: 100%;
 /* Main */
 
 .background {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: black;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -236,11 +239,24 @@ height: 100%;
 @media (max-width: 768px) {
   .trails-card {
     width: 77vw;
+    padding: 20px 20px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
 .trail-map {
   margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+  .trail-map {
+    width: 77vw;
+    height: 33vh;
+    /* position: absolute;
+    bottom: 10px; */
+  }
 }
 
 .trails-card a {
@@ -256,11 +272,18 @@ height: 100%;
   margin: 20px 0px;
 } */
 
-.trails-card > p {
+.trailcard-blurb {
   margin-top: 20px;
   margin-bottom: 36px;
   font-size: 20px;
   /* width: 1280px */
+}
+
+@media (max-width: 768px) {
+  .trailcard-blurb {
+    font-size: 18px;
+    margin: 0;
+  }
 }
 
 .legend-icons {
@@ -290,6 +313,12 @@ height: 100%;
   color: rgb(51, 51, 51);
   justify-content: space-between;
   border-collapse: collapse;
+}
+
+@media (max-width: 768px) {
+  #trails-table {
+    display: none;
+  }
 }
 
 th {
