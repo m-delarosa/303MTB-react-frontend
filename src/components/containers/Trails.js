@@ -6,9 +6,9 @@ import TrailListing from '../elements/TrailListing'
 import Iframe from 'react-iframe'
 import LegendModal from '../elements/LegendModal'
 import TrailModal from '../elements/TrailModal'
+import TrailCard from '../elements/TrailCard'
 
 import { StyledSearchBar, StyledSearchBarContent } from '../styles/StyledSearchBar'
-
 
 const Trails = () => {
     const [{ trails }, fetchTrails] = useTrailsFetch()
@@ -21,7 +21,7 @@ const Trails = () => {
     const api_key = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
-        fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=5&key=${api_key}`)
+        fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=50&key=${api_key}`)
             .then(response => response.json())
             .then(result => setFilteredTrails(result.trails))
             .then(console.log("Trails Fetched!", filteredTrails))
@@ -64,7 +64,7 @@ const Trails = () => {
         setFilteredTrails([...filteredTrails, trail])
     }
 
-    const showTrails = () => {
+    const showTrailListings = () => {
         return filteredTrails.map(trail => (
             <TrailListing
                 key={trail.id}
@@ -80,6 +80,20 @@ const Trails = () => {
                 userLocation={userLocation}
                 trailLat={trail.latitude}
                 trailLong={trail.longitude}
+                action={addTrailToFavorites}
+                favoriteTrails={favoriteTrails}
+            />
+        ))
+    }
+
+    const showTrailCards = () => {
+        return filteredTrails.map(trail => (
+            <TrailCard
+                key={trail.id}
+                trail={trail}
+                toggleTrailModal={toggleTrailModal}
+                showTrailPreview={showTrailPreview}
+                userLocation={userLocation}
                 action={addTrailToFavorites}
                 favoriteTrails={favoriteTrails}
             />
@@ -136,12 +150,13 @@ const Trails = () => {
                     height="500px"
                     allow="geolocation"
                     frameBorder="0"
+                    scrolling="no"
                 />
                 <p className="trailcard-blurb">
-                    When we ride mud in Colorado, we ruin
+                    {/* When we ride mud in Colorado, we ruin
                     trails. Most of the trails listed below are not maintained by municipal
                     staff, instead they rely on volunteers to repair them. One day's worth
-                    of damage can often take six months to a year before it is repaired.
+                    of damage can often take six months to a year before it is repaired. */}
                     We do our best to maintain trail reports, but we can’t be
                     everywhere all the time, so please contribute <FontAwesomeIcon
                         icon={['far', 'edit']}
@@ -165,8 +180,11 @@ const Trails = () => {
                         userLocation={userLocation}
                         favoriteTrails={favoriteTrails}
                         removeTrailFromFavorites={removeTrailFromFavorites} />
-                    {showTrails()}
+                    {showTrailListings()}
                 </table>
+            </section>
+            <section className="trailcard-container">
+                {showTrailCards()}
             </section>
         </div>
     )

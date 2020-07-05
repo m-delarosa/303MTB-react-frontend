@@ -9,8 +9,6 @@ const TrailListing = (props) => {
     const [status, setStatus] = useState('')
     const [description, setDescription] = useState('')
 
-    console.log(description !== '')
-
     const toggleTrailUpdateModal = () => {
         trailUpdateModalIsOpen
             ? setTrailUpdateModalIsOpen(false)
@@ -68,7 +66,7 @@ const TrailListing = (props) => {
                     <img
                         className="trail-img"
                         src={props.image}
-                        alt="Example"
+                        alt={props.name}
                         onClick={handlePreview} />
                 </td>
                 <td className="trail-name">

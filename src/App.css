@@ -1,8 +1,8 @@
 /* Element Boundry Tool */
 
-/* * {
+* {
   border: 1px solid red;
-} */
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab&family=Roboto:wght@400;500&display=swap');
 @-ms-viewport{
@@ -230,7 +230,7 @@ height: 100%;
   width: 75%;
   padding: 30px 40px;
   background-color: #fafafa;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 25px auto;
   border-radius: 6px;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
@@ -242,7 +242,7 @@ height: 100%;
     padding: 20px 20px;
     margin-top: 0;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
 
@@ -254,6 +254,7 @@ height: 100%;
   .trail-map {
     width: 77vw;
     height: 33vh;
+    margin-top: 0;
     /* position: absolute;
     bottom: 10px; */
   }
@@ -283,6 +284,7 @@ height: 100%;
   .trailcard-blurb {
     font-size: 18px;
     margin: 0;
+    margin-top: 10px;
   }
 }
 
@@ -343,8 +345,30 @@ td {
   width: 30%;
 }
 
+.mobile-card-header {
+  display: flex;
+}
 .trail-name {
   width: 14%;
+}
+
+@media (max-width: 768px) {
+  .trail-name {
+    width: 77vw;
+    font-size: 16px;
+    margin-top: 0;
+    text-align: center;
+  }
+  .condition-details {
+    width: auto;
+    padding-left: 10px;
+  }
+  /* .condition-status {
+    width: 25%
+  } */
+  /* .mobile-status-icon {
+    text-align: center;
+  } */
 }
 
 .trail-card {
@@ -368,6 +392,19 @@ td {
   object-fit: cover;
   cursor: pointer;
 }
+
+.trail-card-img {
+  width: 50vw;
+  margin: 0 auto;
+  height: 20vh;
+  object-fit: cover;
+}
+
+.trails-card-summary {
+  /* margin: 10px 0; */
+  display: flex;
+  /* justify-content: space-around; */
+}
 .trail-listing-action {
     cursor: pointer;
     margin: 10px auto;
@@ -377,12 +414,6 @@ td {
 .trail-edit-icon {
   position: relative;
   left: 5px;
-}
-
-.trail-card-img {
-  width: 10rem;
-  align-items: flex-start;
-  border-right: 1px solid #e5e5e5;
 }
 
 .trail-card-name {
@@ -496,6 +527,14 @@ td {
   width: 1200px;
   height: 410px;
   padding: 40px 58px;
+}
+
+@media (max-width: 768px) {
+  .trail-preview-content {
+    width: 100vw;
+    height: auto;
+    min-width: 200px;
+  }
 }
 
 .update-radio-buttons {
