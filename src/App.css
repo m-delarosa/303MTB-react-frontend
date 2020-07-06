@@ -65,7 +65,7 @@ button {
 p {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  line-height: 32px;
+  line-height: 1.5;
   color: rgb(51, 51, 51);
 }
 
@@ -133,6 +133,7 @@ height: 100%;
     justify-content: flex-end;
     padding-left: 0.5rem;
     padding: 0;
+    height: 100%;
   } 
   .nav-logo {
     
@@ -246,6 +247,10 @@ height: 100%;
   }
 }
 
+.mobile-image-container {
+  position: relative;
+}
+
 .trail-map {
   margin-top: 25px;
 }
@@ -282,7 +287,7 @@ height: 100%;
 
 @media (max-width: 768px) {
   .trailcard-blurb {
-    font-size: 18px;
+    font-size: 16px;
     margin: 0;
     margin-top: 10px;
   }
@@ -356,6 +361,7 @@ td {
 
 .mobile-report {
   margin: 0;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -367,7 +373,7 @@ td {
 .mobile-trail-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .trail-name {
@@ -380,20 +386,18 @@ td {
     font-size: 16px;
     margin-top: 0;
     text-align: center;
-    display: inline-block;
-    position: relative;
-    right: 15px;
   }
   .condition-details {
     width: auto;
     padding-left: 10px;
   }
   .mobile-status-symbol {
-    /* position: relative;
-    top: 0;
-    right: 14px; */
-    display: contents;
-    /* font-size: 42px; */
+    position: absolute;
+    bottom: 0px;
+    right: 49px;
+    display: inline;
+    background: #fafafa;
+    border-radius: 4px;
   }
   /* .condition-status {
     width: 25%
@@ -430,6 +434,8 @@ td {
   margin: 0 auto;
   height: 20vh;
   object-fit: cover;
+  display: block;
+  border-radius: 3px;
 }
 
 .trails-card-summary {
