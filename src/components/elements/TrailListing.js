@@ -56,7 +56,6 @@ const TrailListing = (props) => {
 
     const handleUpdate = () => {
         toggleTrailUpdateModal()
-
     }
 
     return (

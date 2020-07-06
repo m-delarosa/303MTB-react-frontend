@@ -1,8 +1,8 @@
 /* Element Boundry Tool */
 
-* {
+/* * {
   border: 1px solid red;
-}
+} */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab&family=Roboto:wght@400;500&display=swap');
 @-ms-viewport{
@@ -286,6 +286,11 @@ height: 100%;
     margin: 0;
     margin-top: 10px;
   }
+  /* .trails-card a {
+    position: relative;
+    left: 28px;
+    bottom: 8px;
+  } */
 }
 
 .legend-icons {
@@ -348,6 +353,23 @@ td {
 .mobile-card-header {
   display: flex;
 }
+
+.mobile-report {
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-report-date{
+  text-align: center;
+  margin: 0;
+}
+
+.mobile-trail-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
 .trail-name {
   width: 14%;
 }
@@ -358,10 +380,20 @@ td {
     font-size: 16px;
     margin-top: 0;
     text-align: center;
+    display: inline-block;
+    position: relative;
+    right: 15px;
   }
   .condition-details {
     width: auto;
     padding-left: 10px;
+  }
+  .mobile-status-symbol {
+    /* position: relative;
+    top: 0;
+    right: 14px; */
+    display: contents;
+    /* font-size: 42px; */
   }
   /* .condition-status {
     width: 25%
@@ -409,6 +441,12 @@ td {
     cursor: pointer;
     margin: 10px auto;
     font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .trail-listing-action {
+  margin: 0;
+  }
 }
 
 .trail-edit-icon {
