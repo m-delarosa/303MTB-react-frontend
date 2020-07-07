@@ -604,8 +604,7 @@ input[type="radio"] {
 }
 
 .trail-summary-card, .article-card, .weather-card {
-  /* height: auto; */
-  height: 800px;
+  height: auto;
   padding: 10px 20px;
   background-color: #fafafa;
   border-radius: 6px;
@@ -615,17 +614,16 @@ input[type="radio"] {
 
 .trail-summary-card {
 width: 10vw;
+padding-bottom: 20px;
 }
 
 .article-card {
 width: 30vw;
 margin: 0 1vw;
-height: auto;
 }
 
 .weather-card {
 width: 10vw;
-height: auto;
 }
 
 /* Article Styling */
@@ -655,4 +653,27 @@ address {
 
 .news-container article:not(:first-child) {
   margin-top: 2rem;
+}
+
+.summary-title {
+  margin-bottom: 18px;
+}
+
+/* .trail-summary {
+  border-top: 1px solid #303030;
+  border-bottom: 1px solid #303030;
+} */
+
+.trail-summary-card .trail-summary:not(:first-child) {
+  border-top: 1px solid #303030;
+}
+
+.summary-symbol {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.summary-name {
+  margin-top: 5px;
+  margin-bottom: 10px;
 }

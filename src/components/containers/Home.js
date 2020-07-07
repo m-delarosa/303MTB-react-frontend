@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useTrailsFetch } from '../hooks/useTrailsFetch'
+import TrailSummary from '../elements/TrailSummary'
 
 const Home = () => {
+    const [{ trails }, fetchTrails] = useTrailsFetch()
+    // const [trails, setTrails] = useState([])
+    // const api_key = process.env.REACT_APP_API_KEY
+
+    // useEffect(() => {
+    //     // fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=10&key=4790190-4582a5581cccc3d3274321dca72ea4b1`)
+    //     //     .then(response => response.json())
+    //     //     .then(result => setTrails(result.trails))
+    //     //     .then(console.log("Trails Fetched!", trails))
+
+    // }, [])
+    console.log(trails)
+    const displaySummary = () => {
+        return trails.slice(0, 11).map(trail => (
+            < TrailSummary trail={trail} />
+        ))
+    }
 
     return (
         <div>
@@ -8,7 +27,8 @@ const Home = () => {
             <div className="home-container">
                 <div className="trails-container">
                     <section className="trail-summary-card">
-                        <h2 className="article-title center">Trails</h2>
+                        <h2 className="article-title summary-title center">Nearest Trails</h2>
+                        {displaySummary()}
                     </section>
                 </div>
                 <div className="news-container">

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useTrailsFetch } from '../hooks/useTrailsFetch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import FavoriteTrails from './FavoriteTrails'
 import TrailListing from '../elements/TrailListing'
@@ -12,7 +11,6 @@ import MobileFavorites from './MobileFavorites'
 import { StyledSearchBar, StyledSearchBarContent } from '../styles/StyledSearchBar'
 
 const Trails = () => {
-    const [{ trails }, fetchTrails] = useTrailsFetch()
     const [legendModalIsOpen, setLegendModalIsOpen] = useState(false)
     const [trailModalIsOpen, setTrailModalIsOpen] = useState(false)
     const [trailId, setTrailId] = useState(0)
