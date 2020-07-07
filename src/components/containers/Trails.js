@@ -7,6 +7,7 @@ import Iframe from 'react-iframe'
 import LegendModal from '../elements/LegendModal'
 import TrailModal from '../elements/TrailModal'
 import TrailCard from '../elements/TrailCard'
+import MobileFavorites from './MobileFavorites'
 
 import { StyledSearchBar, StyledSearchBarContent } from '../styles/StyledSearchBar'
 
@@ -21,7 +22,7 @@ const Trails = () => {
     const api_key = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
-        fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=50&key=${api_key}`)
+        fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=10&key=${api_key}`)
             .then(response => response.json())
             .then(result => setFilteredTrails(result.trails))
             .then(console.log("Trails Fetched!", filteredTrails))
@@ -183,6 +184,13 @@ const Trails = () => {
                     {showTrailListings()}
                 </table>
             </section>
+            <MobileFavorites
+                trails={favoriteTrails}
+                toggleTrailModal={toggleTrailModal}
+                showTrailPreview={showTrailPreview}
+                userLocation={userLocation}
+                favoriteTrails={favoriteTrails}
+                removeTrailFromFavorites={removeTrailFromFavorites} />
             <section className="trailcard-container">
                 {showTrailCards()}
             </section>

@@ -89,6 +89,7 @@ p {
   left: 0;
   height: 50px;
   z-index: 200;
+  border-bottom: 1px solid #303030;
 }
 
 .nav {
@@ -177,10 +178,7 @@ height: 100%;
 }
 
 @media (min-width: 769px) {
-  .side-drawer {
-    display: none;
-  }
-  .hamburger {
+  .side-drawer, .hamburger, .mobile-favorites-container, .mobile-trail-card {
     display: none;
   }
 }
@@ -393,8 +391,8 @@ td {
   }
   .mobile-status-symbol {
     position: absolute;
-    bottom: 0px;
-    right: 49px;
+    bottom: -2px;
+    right: 53px;
     display: inline;
     background: #fafafa;
     border-radius: 4px;

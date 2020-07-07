@@ -12,7 +12,7 @@ const TrailCard = (props) => {
     const [description, setDescription] = useState('')
 
     const handlePreview = () => {
-        props.showTrailPreview(props.id)
+        showTrailPreview(trail.id)
     }
 
     const handleFavorite = () => {
@@ -51,7 +51,7 @@ const TrailCard = (props) => {
     }
 
     return (
-        <>
+        <div className="mobile-trail-card">
             <article className="trails-card">
                 <section className="mobile-card-header">
                     <h2 className="trail-name center">
@@ -75,7 +75,7 @@ const TrailCard = (props) => {
                     </div>
                 </section>
                 <section className="mobile-trail-actions">
-                    {favoriteTrails.find(trail => trail.id === trail.id)
+                    {favoriteTrails.find(listing => listing.id === trail.id)
                         ? <FontAwesomeIcon icon={['fas', 'heart']} color="#ff8f00" className="trail-listing-action center" onClick={handleFavorite} />
                         : <FontAwesomeIcon icon={['far', 'heart']} color="#ff8f00" className="trail-listing-action center" onClick={handleFavorite} />}
                     <FontAwesomeIcon
@@ -91,7 +91,7 @@ const TrailCard = (props) => {
                     </a>
                 </section>
             </article>
-        </>
+        </div>
     )
 }
 

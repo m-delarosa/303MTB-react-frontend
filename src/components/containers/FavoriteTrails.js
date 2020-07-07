@@ -2,7 +2,8 @@ import React from 'react'
 import TrailListing from '../elements/TrailListing'
 
 const FavoriteTrails = (props) => {
-    const { trails, toggleTrailModal, toggleTrailUpdateModal, showTrailPreview, userLocation, favoriteTrails, removeTrailFromFavorites } = props
+    const { trails, toggleTrailModal, toggleTrailUpdateModal, showTrailPreview,
+        userLocation, favoriteTrails, removeTrailFromFavorites } = props
 
     const displayFavoriteTrails = trails.map(trail => {
         return <TrailListing
