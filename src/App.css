@@ -255,7 +255,7 @@ height: 100%;
 
 @media (max-width: 768px) {
   .trail-map {
-    width: 77vw;
+    width: 100%;
     height: 33vh;
     margin-top: 0;
     /* position: absolute;
@@ -285,7 +285,7 @@ height: 100%;
 
 @media (max-width: 768px) {
   .trailcard-blurb {
-    font-size: 16px;
+    font-size: 15px;
     margin: 0;
     margin-top: 10px;
   }
@@ -380,10 +380,9 @@ td {
 
 @media (max-width: 768px) {
   .trail-name {
-    width: 77vw;
+    width: 100%;
     font-size: 16px;
     margin-top: 0;
-    text-align: center;
   }
   .condition-details {
     width: auto;
@@ -391,8 +390,8 @@ td {
   }
   .mobile-status-symbol {
     position: absolute;
-    bottom: -2px;
-    right: 53px;
+    bottom: -3px;
+    right: 80px;
     display: inline;
     background: #fafafa;
     border-radius: 4px;
@@ -450,6 +449,7 @@ td {
 @media (max-width: 768px) {
   .trail-listing-action {
   margin: 0;
+  font-size: 24px;
   }
 }
 
@@ -599,7 +599,7 @@ input[type="radio"] {
 
 .home-container {
   display: flex;
-  width: 90vw;
+  width: 75vw;
   justify-content: center;
 }
 
@@ -676,4 +676,19 @@ address {
 .summary-name {
   margin-top: 5px;
   margin-bottom: 10px;
+}
+
+@media (max-width: 769px) {
+  .trails-container, .weather-container {
+    display: none;
+  }
+  .home-container {
+    width: 100vw;
+  }
+  .article-card {
+    width: 90vw;
+  }
+  .trails-card {
+    width: 90vw;
+  }
 }
