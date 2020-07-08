@@ -27,7 +27,7 @@ const Home = () => {
             <div className="home-container">
                 <div className="trails-container">
                     <section className="trail-summary-card">
-                        <h2 className="article-title summary-title center">Nearest Trails</h2>
+                        <h2 className="article-title summary-title center">Trails Near You</h2>
                         {displaySummary()}
                     </section>
                 </div>
