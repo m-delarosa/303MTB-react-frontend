@@ -665,9 +665,9 @@ address {
   border-bottom: 1px solid #303030;
 } */
 
-/* .trail-summary-card .trail-summary:not(:first-child) {
+.trail-summary-card .trail-summary:not(:first-child) {
   border-top: 1px solid #303030;
-} */
+}
 
 .summary-symbol {
   font-size: 14px;
@@ -679,11 +679,11 @@ address {
 }
 
 .summary-title {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .weather-header {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 769px) {
