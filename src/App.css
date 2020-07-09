@@ -626,7 +626,8 @@ margin: 0 1vw;
 }
 
 .trail-summary {
-  
+  display: flex;
+  align-items: center;
 }
 
 
@@ -659,27 +660,30 @@ address {
   margin-top: 2rem;
 }
 
-.summary-title {
-  margin-bottom: 18px;
-}
-
 /* .trail-summary {
   border-top: 1px solid #303030;
   border-bottom: 1px solid #303030;
 } */
 
-.trail-summary-card .trail-summary:not(:first-child) {
+/* .trail-summary-card .trail-summary:not(:first-child) {
   border-top: 1px solid #303030;
-}
+} */
 
 .summary-symbol {
-  margin-top: 10px;
   font-size: 14px;
 }
 
 .summary-name {
-  margin-top: 5px;
-  margin-bottom: 10px;
+  margin: 20px 0px;
+  padding-left: 10px;
+}
+
+.summary-title {
+  margin-bottom: 15px;
+}
+
+.weather-header {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 769px) {

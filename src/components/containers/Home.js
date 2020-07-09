@@ -72,7 +72,7 @@ const Home = () => {
                 </div>
                 <div className="weather-container">
                     <section className="weather-card">
-                        <h2 className="article-title center">Weather</h2>
+                        <h2 className="article-title center weather-header">Weather</h2>
                         <a
                             className="weatherwidget-io"
                             href="https://forecast7.com/en/39d69n105d10/80232/?unit=us"
