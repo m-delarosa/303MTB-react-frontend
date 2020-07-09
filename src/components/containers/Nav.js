@@ -38,7 +38,7 @@ const Nav = (props) => {
                     <li><a href="/trails">Trail Reports</a></li>
                     <li><a href="/trailfinder">Trail Finder</a></li>
                     <li><a href="/forums">Forums</a></li>
-                    <li><a href="/about">About</a></li>
+                    {/* <li><a href="/about">About</a></li> */}
                 </ul>
                 {localStorage.token
                     ? (

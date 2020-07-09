@@ -116,7 +116,7 @@ height: 100%;
   justify-content: space-between;
   width: 79%;
   font-size: 20px;
-  padding-left: 5.2rem;
+  padding-left: 15.2rem;
 }
 
 .nav-login {
@@ -148,7 +148,7 @@ height: 100%;
 
 .profile-icon {
   font-size: 38px;
-  margin-left: 172px;
+  margin-left: 311px;
 }
 
 .side-drawer {
@@ -226,7 +226,7 @@ height: 100%;
 /* Trails Card */
 .trails-card {
   height: auto;
-  width: 75%;
+  width: 76%;
   padding: 30px 40px;
   background-color: #fafafa;
   margin: 0 auto 25px auto;
