@@ -612,8 +612,11 @@ input[type="radio"] {
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
+.trail-summary-card, .weather-card {
+  width: 14vw;
+}
+
 .trail-summary-card {
-width: 10vw;
 padding-bottom: 20px;
 }
 
@@ -622,9 +625,10 @@ width: 30vw;
 margin: 0 1vw;
 }
 
-.weather-card {
-width: 10vw;
+.trail-summary {
+  
 }
+
 
 /* Article Styling */
 
