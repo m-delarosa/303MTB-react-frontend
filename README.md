@@ -1,8 +1,8 @@
-## 303MTB
+## 303MTB 🚲
 
 A Progressive Web Application which fosters an online community for mountain bikers in the Denver/Boulder area. 
 
-## Features
+## Features 🌟
 - Users can quickly check conditions of trails near them 
 - Users can find in-depth information about trails in their area
 - Users can leave trail reports and save favorite trails, favortied trails will always be at the top of their list
