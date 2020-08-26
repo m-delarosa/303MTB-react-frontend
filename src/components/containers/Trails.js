@@ -20,7 +20,7 @@ const Trails = () => {
     const api_key = process.env.REACT_APP_API_KEY
 
     useEffect(() => {
-        fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=10&key=${api_key}`)
+        fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=20&key=${api_key}`)
             .then(response => response.json())
             .then(result => setFilteredTrails(result.trails))
             .then(console.log("Trails Fetched!", filteredTrails))
@@ -169,7 +169,7 @@ const Trails = () => {
                         <th>Trail</th>
                         <th onClick={toggleLegendModal} className="legend-link">Status*</th>
                         <th>Details</th>
-                        <th>Last Report</th>
+                        <th>Reported</th>
                         <th>Actions</th>
                     </tr>
                     <FavoriteTrails
