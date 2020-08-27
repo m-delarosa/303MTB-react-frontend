@@ -9,6 +9,7 @@ Live Demo: www.303MTB.org
 [Video Presentation](https://youtu.be/znnAHKrnrC4)
 
 ![303MTB Broswer Demo GIF](demo/303browserdemo640.gif)
+![303MTB Mobile Demo GIF](demo/303mobile_original.gif)
  
 ## Features 🌟
 - Users can quickly check conditions of trails nearest them
