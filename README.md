@@ -29,3 +29,22 @@ Live Demo: www.303MTB.org
 Currently under construction and open to collaboration:
 - Users can receive a new trail recommendation based off user submitted criteria
 - Users can communicate with each other in a discourse community forum.
+
+## Built with 🔧
+- React
+- Ruby on Rails
+- REI Mountain Project API
+- Heroku
+- Firebase
+- JWT Authentication
+
+## Getting Started 👨‍🚀
+1. Fork and Star ⭐️ this repository
+2. `git clone` to your local directory
+3. `cd 303-MTB-React-Frontend`
+4. Run `npm install`
+5. Run `npm start` to start the frontend 🎉
+
+Optional: 
+
+Fork and clone the backend [here.](https://github.com/m-delarosa/303mtb-fullstack-app-backend)
