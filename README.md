@@ -1,10 +1,11 @@
-## 303MTB 🚲🚵‍♂️
+## 303MTB 🚵‍♂️
  
 A Progressive Web Application which fosters an online community for mountain bikers in the Denver/Boulder area.
 
 ## Demo 🖥
 
 Live Demo: www.303MTB.org
+
 [Video Demo](https://youtu.be/znnAHKrnrC4)
  
 ## Features 🌟
