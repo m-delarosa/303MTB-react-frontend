@@ -6,7 +6,7 @@ A Progressive Web Application which fosters an online community for mountain bik
 
 Live Demo: www.303MTB.org
 
-[Video Demo](https://youtu.be/znnAHKrnrC4)
+[Video Presentation](https://youtu.be/znnAHKrnrC4)
  
 ## Features 🌟
 - Users can quickly check conditions of trails nearest them
@@ -17,6 +17,5 @@ Live Demo: www.303MTB.org
 - Users receive a seven day forecast of their local weather
  
 Currently under construction and open to collaboration:
-- Users can receive a new trail recommendation based off user-submitted criteria
+- Users can receive a new trail recommendation based off user submitted criteria
 - Users can communicate with each other in a discourse community forum.
-- 
