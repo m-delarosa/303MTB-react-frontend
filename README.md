@@ -10,14 +10,14 @@ Live Demo: www.303MTB.org
 
 ![303MTB Broswer Demo GIF](demo/303browserdemo640.gif)
 ![303MTB Mobile Demo GIF](demo/303mobile_original.gif)
-![303MTB Browser GIF 1](screenshots/browser1.gif)
-![303MTB Mobile Gif 2](screenshots/browser2.gif)
-![303MTB Mobile screenshots GIF](screenshots/browser3.gif)
-![303MTB Mobile screenshots GIF](screenshots/browser4.gif)
-![303MTB Mobile screenshots GIF](screenshots/mobile1.gif)
-![303MTB Mobile screenshots GIF](screenshots/mobile2.gif)
-![303MTB Mobile screenshots GIF](screenshots/mobile3.gif)
-![303MTB Mobile screenshots GIF](screenshots/mobile4.gif)
+![303MTB Browser GIF 1](screenshots/browser1.png)
+![303MTB Mobile Gif 2](screenshots/browser2.png)
+![303MTB Mobile screenshots GIF](screenshots/browser3.png)
+![303MTB Mobile screenshots GIF](screenshots/browser4.png)
+![303MTB Mobile screenshots GIF](screenshots/mobile1.png)
+![303MTB Mobile screenshots GIF](screenshots/mobile2.png)
+![303MTB Mobile screenshots GIF](screenshots/mobile3.png)
+![303MTB Mobile screenshots GIF](screenshots/mobile4.png)
  
 ## Features 🌟
 - Users can quickly check conditions of trails nearest them
