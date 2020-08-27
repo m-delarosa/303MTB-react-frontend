@@ -45,6 +45,9 @@ Currently under construction and open to collaboration:
 4. Run `npm install`
 5. Run `npm start` to start the frontend 🎉
 
-Optional: 
+Optional: Fork and clone the backend [here.](https://github.com/m-delarosa/303mtb-fullstack-app-backend)
 
-Fork and clone the backend [here.](https://github.com/m-delarosa/303mtb-fullstack-app-backend)
+## Author, License and Contributions
+MIT © Michael De La Rosa
+
+Contributions are always welcome!
