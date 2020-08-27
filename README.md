@@ -2,9 +2,10 @@
  
 A Progressive Web Application which fosters an online community for mountain bikers in the Denver/Boulder area.
 
-<figure class="video_container">
-  <iframe src="https://www.youtube.com/embed/znnAHKrnrC4" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+## Demo 🖥
+
+Live Demo: www.303MTB.org
+[Video Demo](https://youtu.be/znnAHKrnrC4)
  
 ## Features 🌟
 - Users can quickly check conditions of trails nearest them
