@@ -1,7 +1,6 @@
 ## 303MTB 🚵‍♂️
  
 A Progressive Web Application which fosters an online community for mountain bikers in the Denver/Boulder area.
-![303MTB Browser GIF 1](screenshots/browser1.png)
 
 ## Demo & Screenshots 🖥
 
@@ -9,13 +8,14 @@ Live Demo: www.303MTB.org
 
 [Video Presentation for Flatiron School](https://youtu.be/znnAHKrnrC4)
 
-![303MTB Mobile Gif 2](screenshots/browser2.png)
-![303MTB Mobile screenshots GIF](screenshots/browser3.png)
-![303MTB Mobile screenshots GIF](screenshots/browser4.png)
-![303MTB Mobile screenshots GIF](screenshots/mobile1.png)
-![303MTB Mobile screenshots GIF](screenshots/mobile2.png)
-![303MTB Mobile screenshots GIF](screenshots/mobile3.png)
-![303MTB Mobile screenshots GIF](screenshots/mobile4.png)
+![303MTB Browser Scrren 1](screenshots/browser1.png)
+![303MTB Mobile Screen 2](screenshots/browser2.png)
+![303MTB Mobile Screen 3](screenshots/browser3.png)
+![303MTB Mobile Screen 4](screenshots/browser4.png)
+![303MTB Mobile Screen 1](screenshots/mobile1.png)
+![303MTB Mobile Screen 2](screenshots/mobile2.png)
+![303MTB Mobile Screen 3](screenshots/mobile3.png)
+![303MTB Mobile Screen 4](screenshots/mobile4.png)
 ![303MTB Mobile Demo GIF](demo/303mobile_original.gif)
  
 ## Features 🌟
