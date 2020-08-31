@@ -41,7 +41,7 @@ Currently under construction and open to collaboration:
 ## Getting Started 👨‍🚀
 1. Fork and Star ⭐️ this repository
 2. `git clone` to your local directory
-3. `cd 303-MTB-React-Frontend`
+3. `cd 303MTB-react-frontend`
 4. Run `npm install`
 5. Run `npm start` to start the frontend 🎉
 
