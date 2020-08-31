@@ -48,6 +48,6 @@ Currently under construction and open to collaboration:
 Optional: Fork and clone the backend [here.](https://github.com/m-delarosa/303mtb-fullstack-app-backend)
 
 ## Author, License and Contributions
-MIT © Michael De La Rosa
+MIT © [Michael De La Rosa](https://www.linkedin.com/in/mdelarosa/)
 
 Contributions are always welcome!
