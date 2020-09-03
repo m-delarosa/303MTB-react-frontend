@@ -15,20 +15,6 @@ const Nav = (props) => {
         )
     }
 
-    // const handleLoginClick = () => {
-    //     if (registerModalIsOpen) {
-    //         toggleRegisterModal()
-    //         toggleLoginModal()
-    //     } else toggleLoginModal()
-    // }
-
-    // const handleRegisterClick = () => {
-    //     if (loginModalIsOpen) {
-    //         toggleLoginModal()
-    //         toggleRegisterModal()
-    //     } else toggleRegisterModal()
-    // }
-
     return (
         <header className="header">
             <nav className="nav">

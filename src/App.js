@@ -75,15 +75,12 @@ function App() {
         toggleSideDrawer={toggleSideDrawer}
         handleLoginClick={handleLoginClick}
         handleRegisterClick={handleRegisterClick} />
-      {/* {sideDrawer} */}
       <SideDrawer
         toggleSideDrawer={toggleSideDrawer}
         show={sideDrawerIsOpen}
         handleLoginClick={handleLoginClick}
         handleRegisterClick={handleRegisterClick} />
       {overlay}
-      {/* {showOverlay} */}
-      {/* <Overlay toggleSideDrawer={toggleSideDrawer} /> */}
       <LoginModal
         loginModalIsOpen={loginModalIsOpen}
         toggleRegisterModal={toggleRegisterModal}
