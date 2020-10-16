@@ -14,7 +14,7 @@ const LoginModal = (props) => {
         const password = loginFormData.get("password")
         const loginBody = { username, password }
 
-        fetch("https://mtb-303.herokuapp.com/login", {
+        fetch("http://localhost:3000/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
