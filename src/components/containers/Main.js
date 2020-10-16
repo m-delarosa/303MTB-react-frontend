@@ -11,7 +11,7 @@ const Main = () => {
             <main className="background">
                 <div className="overlay">
                     <Switch>
-                        <Route path="/" exact component={Home} />
+                        <Route path="/" exact component={Trails} />
                         <Route path="/trails" component={Trails} />
                         <Route path="/trailfinder" component={TrailFinder} />
                         <Route path="/about" component={About} />
