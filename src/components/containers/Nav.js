@@ -10,7 +10,6 @@ const Nav = (props) => {
     return (
         <header className="header">
             <nav className="nav">
-                <div></div>
                 <div className="nav-logo"><a href="/">303MTB</a></div>
                 {localStorage.token
                     ? (
