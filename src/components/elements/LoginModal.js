@@ -35,10 +35,7 @@ const LoginModal = (props) => {
         }
         if (response.user) {
             localStorage.setItem("token", response.token)
-            $form.reset()
-            const $responseMessage = document.createElement("li")
-            $responseMessage.innerText = `Welcome back ${response.user.name}. ${response.message}`
-            $form.append($responseMessage)
+            toggleLoginModal()
         } else {
             const $errorMessage = document.createElement("li")
             $errorMessage.id = "response-error-message"
