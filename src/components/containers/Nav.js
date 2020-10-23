@@ -19,7 +19,7 @@ const Nav = (props) => {
                     )
                     : (
                         <div className="nav-login">
-                            <a href="#login" onClick={handleLoginClick}>Login</a> / <a id="register" href="#register" onClick={handleRegisterClick}>Register</a>
+                            <a href="#login" onClick={handleLoginClick}>Login</a> | <a id="register" href="#register" onClick={handleRegisterClick}>Register</a>
                         </div>
                     )
                 }
