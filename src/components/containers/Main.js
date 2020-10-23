@@ -1,9 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './Home'
-import About from './About'
 import Trails from './Trails'
-import TrailFinder from './TrailFinder'
+import Profile from './Profile'
 
 const Main = () => {
     return (
@@ -11,10 +9,8 @@ const Main = () => {
             <main className="background">
                 <div className="overlay">
                     <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/trails" component={Trails} />
-                        <Route path="/trailfinder" component={TrailFinder} />
-                        <Route path="/about" component={About} />
+                        <Route path="/" exact component={Trails} />
+                        <Route path="/profile" exact component={Profile} />
                     </Switch>
                 </div>
             </main>
