@@ -29,16 +29,10 @@ const RegisterModal = (props) => {
             body: JSON.stringify(registrationBody),
         })
             .then((response) => response.json())
-            .then((result) => {
-                // console.log(result)
-                // console.log(result.token)
-                // localStorage.setItem("token", result.token)
-                handleRegistrationUserResponse(result, $registerForm)
-            })
+            .then((result) => handleRegistrationUserResponse(result, $registerForm))
     }
 
     const handleRegistrationUserResponse = (response, $form) => {
-        console.log("handleRegistrationResponse Fired!")
         const $errorMessages = document.getElementById("response-error-messages")
 
         if ($errorMessages) {
