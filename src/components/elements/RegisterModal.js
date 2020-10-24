@@ -20,7 +20,7 @@ const RegisterModal = (props) => {
         const password = registrationFormData.get("password")
         const registrationBody = { user: { name, username, email, password } }
 
-        fetch("http://localhost:3000/users", {
+        fetch("https://mtb-303.herokuapp.com/users", {
             method: "POST",
             headers: {
                 Accept: "application/json",
