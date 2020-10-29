@@ -22,18 +22,32 @@ const Trails = () => {
     useEffect(() => {
         fetch(`https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=100&maxResults=20&key=${api_key}`)
             .then(response => response.json())
-            .then(result => setFilteredTrails(result.trails))
-            .then(console.log("Trails Fetched!", filteredTrails))
+            .then(result => setMtbProjectTrails(result.trails))
 
-        navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+        fetch("https://mtb-303.herokuapp.com/trails")
+            .then(response => response.json())
+            .then(result => setDBTrails(result))
+            .then(filterTrails())
+
+        navigator.geolocation.getCurrentPosition(locationSuccess, locationError)
     }, [])
 
-    const successCallback = (position) => {
+    // const filterTrails = () => {
+    //     if (mtbProjectTrails.length > 0 && dbTrails.length > 0) {
+    //         console.log("I will perform filtering as expected use this data:", mtbProjectTrails, dbTrails)
+    //         // mtbProjectTrails.forEach(trail => {
+    //         //     if (dbTrails.includes())
+    //         // })
+    //     }
+    //     else console.log("mtb and db state objects are empty")
+    // }
+
+    const locationSuccess = (position) => {
         console.log(position)
         setUserLocation({ lat: position.coords.latitude, long: position.coords.longitude })
     }
 
-    const errorCallback = (error) => {
+    const locationError = (error) => {
         console.error(error)
     }
 
@@ -64,27 +78,27 @@ const Trails = () => {
         setFilteredTrails([...filteredTrails, trail])
     }
 
-    const showTrailListings = () => {
-        return filteredTrails.map(trail => (
-            <TrailListing
-                key={trail.id}
-                trail={trail}
-                id={trail.id}
-                image={trail.imgMedium}
-                name={trail.name}
-                status={trail.conditionStatus}
-                details={trail.conditionDetails}
-                date={trail.conditionDate}
-                toggleTrailModal={toggleTrailModal}
-                showTrailPreview={showTrailPreview}
-                userLocation={userLocation}
-                trailLat={trail.latitude}
-                trailLong={trail.longitude}
-                action={addTrailToFavorites}
-                favoriteTrails={favoriteTrails}
-            />
-        ))
-    }
+    // const showTrailListings = () => {
+    //     return filteredTrails.map(trail => (
+    //         <TrailListing
+    //             key={trail.id}
+    //             trail={trail}
+    //             id={trail.id}
+    //             image={trail.imgMedium}
+    //             name={trail.name}
+    //             status={trail.conditionStatus}
+    //             details={trail.conditionDetails}
+    //             date={trail.conditionDate}
+    //             toggleTrailModal={toggleTrailModal}
+    //             showTrailPreview={showTrailPreview}
+    //             userLocation={userLocation}
+    //             trailLat={trail.latitude}
+    //             trailLong={trail.longitude}
+    //             action={addTrailToFavorites}
+    //             favoriteTrails={favoriteTrails}
+    //         />
+    //     ))
+    // }
 
     const showTrailCards = () => {
         return filteredTrails.map(trail => (
@@ -143,7 +157,7 @@ const Trails = () => {
                         <input type="text" placeholder="Find a Trail" />
                     </StyledSearchBarContent>
                 </StyledSearchBar> */}
-                <Iframe
+                {/* <Iframe
                     url="https://www.mtbproject.com/widget/map?favs=0&location=ip&x=-11699455&y=4828592&z=8.5&h=500"
                     className="trail-map"
                     width="100%"
@@ -151,12 +165,8 @@ const Trails = () => {
                     allow="geolocation"
                     frameBorder="0"
                     scrolling="no"
-                />
+                /> */}
                 <p className="trailcard-blurb">
-                    {/* When we ride mud in Colorado, we ruin
-                    trails. Most of the trails listed below are not maintained by municipal
-                    staff, instead they rely on volunteers to repair them. One day's worth
-                    of damage can often take six months to a year before it is repaired. */}
                     We do our best to maintain trail reports, but we can’t be
                     everywhere all the time, so please contribute <FontAwesomeIcon
                         icon={['far', 'edit']}
@@ -180,7 +190,7 @@ const Trails = () => {
                         userLocation={userLocation}
                         favoriteTrails={favoriteTrails}
                         removeTrailFromFavorites={removeTrailFromFavorites} />
-                    {showTrailListings()}
+                    {/* {showTrailListings()} */}
                 </table>
             </section>
             <MobileFavorites
