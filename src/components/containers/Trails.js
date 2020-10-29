@@ -8,14 +8,14 @@ import TrailModal from '../elements/TrailModal'
 import TrailCard from '../elements/TrailCard'
 import MobileFavorites from './MobileFavorites'
 
-import { StyledSearchBar, StyledSearchBarContent } from '../styles/StyledSearchBar'
-
 const Trails = () => {
     const [legendModalIsOpen, setLegendModalIsOpen] = useState(false)
     const [trailModalIsOpen, setTrailModalIsOpen] = useState(false)
     const [trailId, setTrailId] = useState(0)
     const [userLocation, setUserLocation] = useState({})
     const [favoriteTrails, setFavoriteTrails] = useState([])
+    const [mtbProjectTrails, setMtbProjectTrails] = useState([])
+    const [dbTrails, setDBTrails] = useState([])
     const [filteredTrails, setFilteredTrails] = useState([])
     const api_key = process.env.REACT_APP_API_KEY
 
@@ -24,6 +24,7 @@ const Trails = () => {
             .then(response => response.json())
             .then(result => setFilteredTrails(result.trails))
             .then(console.log("Trails Fetched!", filteredTrails))
+
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
     }, [])
 
