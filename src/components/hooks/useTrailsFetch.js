@@ -12,11 +12,9 @@ export const useTrailsFetch = () => {
 
         try {
             const result = await (await fetch(endpoint)).json()
-            console.log(result)
             setTrails(result.trails)
         } catch (error) {
             setError(true)
-            console.log("There has been an error with this fetch.")
         }
         setLoading(false)
     }
